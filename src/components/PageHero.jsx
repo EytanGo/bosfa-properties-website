@@ -1,7 +1,9 @@
-export default function PageHero({ title, subtitle, backgroundImage }) {
+export default function PageHero({ title, subtitle, backgroundImage, tall = false }) {
+  const heightClass = tall ? 'h-[28rem] md:h-[32rem]' : 'h-80 md:h-96';
+
   return (
     <section
-      className="relative w-full h-80 bg-navy bg-cover bg-center bg-no-repeat flex items-center justify-center overflow-hidden mt-20"
+      className={`relative w-full ${heightClass} bg-navy bg-cover bg-center bg-no-repeat flex items-center justify-center overflow-hidden mt-20`}
       style={
         backgroundImage
           ? {
