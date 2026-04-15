@@ -11,15 +11,15 @@ function HeroCarousel() {
   const slides = [
     {
       image: images.courthouseCorporateCenter,
-      title: null,
-      subtitle: null,
-      link: null,
+      title: 'COURTHOUSE CORPORATE CENTER',
+      subtitle: 'CENTRAL ISLIP, NY',
+      link: '/properties/courthouse-corporate-center',
     },
     {
       image: images.gardensAtBuffalo,
-      title: null,
-      subtitle: null,
-      link: null,
+      title: 'GARDENS AT BUFFALO',
+      subtitle: 'FREEPORT, NY',
+      link: '/properties/gardens-at-buffalo',
     },
     {
       image: images.bayviewEstates,
@@ -88,7 +88,7 @@ function HeroCarousel() {
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/40"></div>
 
-            {/* Text Overlay - only for slides with content */}
+            {/* Text Overlay */}
             {slide.title && (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                 <h2 className="text-white font-heading text-4xl md:text-6xl font-bold mb-4">
@@ -157,7 +157,6 @@ function HeroCarousel() {
     </div>
   );
 }
-
 // About Section Component
 function AboutSection() {
   return (
@@ -182,7 +181,7 @@ function AboutSection() {
           to="/about"
           className="inline-block text-gold font-bold uppercase text-sm tracking-widest hover:text-gold-light transition-colors duration-300"
         >
-          Find Out More <span className="text-lg">→</span>
+          Find Out More <span className="text-lg">&rarr;</span>
         </Link>
       </div>
     </section>
@@ -237,7 +236,7 @@ function CountUpNumber({ targetNumber, duration = 2000 }) {
     requestAnimationFrame(animateCount);
   }, [isVisible, targetNumber, duration]);
 
-  return <div ref={ref}>{count.toLocaleString()}</div>;
+  return <span ref={ref}>{count.toLocaleString()}</span>;
 }
 
 // Stats Section Component
@@ -253,7 +252,7 @@ function StatsSection() {
     },
     {
       number: 700,
-      label: 'Total Transaction Volume (Millions)',
+      label: 'Total Transaction Volume',
       prefix: '$',
       suffix: 'M+',
     },
@@ -270,9 +269,7 @@ function StatsSection() {
           {stats.map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-white font-heading text-4xl md:text-5xl font-bold mb-2 animate-count-up">
-                {stat.prefix && <span>{stat.prefix}</span>}
-                <CountUpNumber targetNumber={stat.number} />
-                {stat.suffix && <span>{stat.suffix}</span>}
+                <span>{stat.prefix || ''}<CountUpNumber targetNumber={stat.number} />{stat.suffix || ''}</span>
               </div>
               <p className="text-gold text-xs uppercase font-bold tracking-widest">
                 {stat.label}
@@ -284,7 +281,6 @@ function StatsSection() {
     </section>
   );
 }
-
 // Portfolio Section Component
 function PortfolioSection() {
   const portfolioProperties = [
@@ -310,7 +306,7 @@ function PortfolioSection() {
             to="/properties"
             className="mt-6 md:mt-0 text-gold font-bold uppercase text-sm tracking-widest hover:text-gold-light transition-colors duration-300"
           >
-            More Properties <span className="text-lg">→</span>
+            More Properties <span className="text-lg">&rarr;</span>
           </Link>
         </div>
 
@@ -338,10 +334,10 @@ function PortfolioSection() {
                 <h3 className="text-white font-heading text-2xl font-bold mb-2">
                   {property.name}
                 </h3>
-                <p className="text-gold-light text-sm mb-4">
-                  {property.units} • {property.location}
+                <p className="text-white/80 text-sm mb-4">
+                  {property.units} &bull; {property.location}
                 </p>
-                <div className="flex items-center text-gold font-bold group-hover:translate-x-2 transition-transform duration-300">
+                <div className="flex items-center text-white font-bold group-hover:translate-x-2 transition-transform duration-300">
                   <span className="mr-2">View Property</span>
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
@@ -360,7 +356,6 @@ function PortfolioSection() {
     </section>
   );
 }
-
 // Development Update Section Component
 function DevelopmentUpdateSection() {
   return (
@@ -370,7 +365,7 @@ function DevelopmentUpdateSection() {
           Development Update
         </p>
         <h2 className="text-white font-heading text-3xl md:text-5xl font-bold mb-8">
-          Gardens of Buffalo — Construction Progress
+          Gardens of Buffalo &mdash; Construction Progress
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
@@ -409,7 +404,7 @@ function DevelopmentUpdateSection() {
           to="/properties/gardens-at-buffalo"
           className="inline-block px-8 py-3 bg-gold text-navy font-bold uppercase text-sm tracking-widest hover:bg-gold-light transition-all duration-300"
         >
-          View Property Details <span className="ml-2">→</span>
+          View Property Details <span className="ml-2">&rarr;</span>
         </Link>
       </div>
     </section>
@@ -454,7 +449,7 @@ function InvestmentStrategySection() {
               to="/investment-strategy"
               className="inline-block text-gold font-bold uppercase text-sm tracking-widest hover:text-gold-light transition-colors duration-300"
             >
-              Find Out More <span className="text-lg">→</span>
+              Find Out More <span className="text-lg">&rarr;</span>
             </Link>
           </div>
         </div>
