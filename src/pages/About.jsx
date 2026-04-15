@@ -9,6 +9,7 @@ export default function About() {
         title="ABOUT US"
         subtitle="A Private, Family-Owned Real Estate Company"
         backgroundImage={images.aboutHero}
+        tall
       />
 
       {/* Our Story Section */}
@@ -64,80 +65,6 @@ export default function About() {
                 allowFullScreen
                 className="w-full h-full"
               ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Leadership Section */}
-      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div className="mb-12">
-          <p className="text-gold font-montserrat text-sm font-semibold uppercase tracking-widest mb-4">
-            Our Team
-          </p>
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-navy">
-            Leadership
-          </h2>
-        </div>
-
-        <div className="space-y-16">
-          {/* Daniel Goldstein */}
-          <div className="border-b border-gray-200 pb-12">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-              <div className="md:flex-shrink-0">
-                <div className="h-48 w-48 bg-navy-light rounded-lg flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">Photo</span>
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-playfair font-bold text-navy mb-2">
-                  Daniel Goldstein
-                </h3>
-                <p className="text-gold font-montserrat font-semibold uppercase text-sm tracking-widest mb-6">
-                  Founder & Managing Member
-                </p>
-                <div className="space-y-4 text-gray-700 font-montserrat">
-                  <p className="leading-relaxed">
-                    Daniel Goldstein is the visionary founder and managing member of BOSFA Properties. With a career spanning over four decades, he has built an impressive portfolio of residential, commercial, and development properties across multiple states.
-                  </p>
-                  <p className="leading-relaxed">
-                    His entrepreneurial journey began in 1981 as an electrician, demonstrating the foundational work ethic that continues to drive BOSFA's success. Daniel's experience extends internationally through his founding of an import company in Israel, and he further honed his real estate expertise while working with E&M Management before establishing BOSFA Properties with his son Aron.
-                  </p>
-                  <p className="leading-relaxed">
-                    Beyond his professional accomplishments, Daniel is deeply committed to his community, serving as a volunteer firefighter and as a trustee at Lawrence. He exemplifies the values of integrity, dedication, and a genuine desire to create positive change through real estate transformation.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Benjamin Diehl */}
-          <div>
-            <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-              <div className="md:flex-shrink-0">
-                <div className="h-48 w-48 bg-navy-light rounded-lg flex items-center justify-center">
-                  <span className="text-gray-400 text-sm">Photo</span>
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl md:text-3xl font-playfair font-bold text-navy mb-2">
-                  Benjamin Diehl
-                </h3>
-                <p className="text-gold font-montserrat font-semibold uppercase text-sm tracking-widest mb-6">
-                  Development Manager
-                </p>
-                <div className="space-y-4 text-gray-700 font-montserrat">
-                  <p className="leading-relaxed">
-                    Benjamin Diehl is the Development Manager at BOSFA Properties, overseeing the company's ambitious portfolio of development projects. With expertise managing over 2 million square feet of property, Benjamin brings a strategic and detail-oriented approach to every project he leads.
-                  </p>
-                  <p className="leading-relaxed">
-                    He began his tenure at BOSFA on the leasing team, where he gained valuable insight into property operations and tenant relationships. His educational background, featuring a degree in Architecture from Virginia Tech, provides him with a unique perspective on design and development feasibility that enhances BOSFA's project outcomes.
-                  </p>
-                  <p className="leading-relaxed">
-                    Benjamin's combination of hands-on property experience and formal architectural training makes him an invaluable asset to BOSFA's growth and development initiatives, ensuring that each project is executed with precision and vision.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
