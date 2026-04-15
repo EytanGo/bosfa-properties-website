@@ -13,50 +13,48 @@ export default function Media() {
 
       {/* Articles Grid */}
       <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {mediaArticles.map((article, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col"
+              to={article.url}
+              className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col group"
             >
               {/* Article Image */}
-              <div className="h-48 sm:h-56 overflow-hidden bg-gray-200">
+              <div className="h-48 sm:h-52 overflow-hidden bg-gray-200">
                 <img
                   src={article.image}
                   alt={article.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
 
               {/* Article Content */}
-              <div className="p-6 sm:p-8 flex flex-col flex-1">
+              <div className="p-6 flex flex-col flex-1">
                 {/* Date */}
                 <p className="text-sm font-montserrat text-gold font-semibold uppercase tracking-wide mb-3">
                   {article.date}
                 </p>
 
                 {/* Title */}
-                <h3 className="text-xl sm:text-2xl font-playfair font-bold text-navy mb-4 leading-tight">
+                <h3 className="text-lg font-playfair font-bold text-navy mb-4 leading-tight">
                   {article.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-gray-700 font-montserrat text-base leading-relaxed mb-6 flex-grow">
+                <p className="text-gray-700 font-montserrat text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
                   {article.excerpt}
                 </p>
 
                 {/* Read More Link */}
-                <Link
-                  to={article.url}
-                  className="text-gold font-montserrat font-semibold inline-flex items-center hover:text-gold/80 transition-colors duration-300 group"
-                >
+                <span className="text-gold font-montserrat font-semibold inline-flex items-center group-hover:text-gold/80 transition-colors duration-300">
                   Read More
                   <span className="ml-2 transform group-hover:translate-x-1 transition-transform duration-300">
-                    →
+                    &rarr;
                   </span>
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
