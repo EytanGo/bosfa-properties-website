@@ -75,13 +75,13 @@ export default function Properties() {
                       {property.name}
                     </h3>
 
-                    <p className="font-montserrat text-gold text-sm font-semibold uppercase tracking-widest mb-3">
+                    <p className="font-montserrat text-white text-sm font-semibold uppercase tracking-widest mb-3">
                       {property.units}
                     </p>
 
-                    <p className="font-montserrat text-gray-200 text-sm mb-4 flex items-center justify-between">
+                    <p className="font-montserrat text-white/80 text-sm mb-4 flex items-center justify-between">
                       <span>{property.location}</span>
-                      <span className="text-lg">→</span>
+                      <span className="text-lg">&rarr;</span>
                     </p>
                   </div>
                 </div>
