@@ -8,6 +8,7 @@ import Properties from './pages/Properties';
 import PropertyDetail from './pages/PropertyDetail';
 import InvestmentStrategy from './pages/InvestmentStrategy';
 import Media from './pages/Media';
+import MediaArticle from './pages/MediaArticle';
 import Contact from './pages/Contact';
 import InvestorPortal from './pages/InvestorPortal';
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/properties/:id" element={<PropertyDetail />} />
           <Route path="/investment-strategy" element={<InvestmentStrategy />} />
           <Route path="/media" element={<Media />} />
+          <Route path="/media/:slug" element={<MediaArticle />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/investor-portal" element={<InvestorPortal />} />
         </Routes>
