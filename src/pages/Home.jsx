@@ -86,7 +86,7 @@ function HeroCarousel() {
             }}
           >
             {/* Dark Overlay */}
-            <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
 
             {/* Text Overlay - only for slides with content */}
             {slide.title && (
@@ -330,7 +330,7 @@ function PortfolioSection() {
                 }}
               >
                 {/* Dark Overlay */}
-                <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all duration-300"></div>
               </div>
 
               {/* Content */}
