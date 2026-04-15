@@ -31,6 +31,11 @@ export default function PropertyDetail() {
     );
   }
 
+  // Use gallery images if available, otherwise fall back to single image
+  const galleryImages = property.gallery && property.gallery.length > 0
+    ? property.gallery
+    : [property.image];
+
   return (
     <div className="w-full">
       {/* Hero Section */}
@@ -40,7 +45,7 @@ export default function PropertyDetail() {
             to="/properties"
             className="inline-flex items-center text-gold hover:text-gold-light transition-colors mb-8 font-montserrat font-semibold"
           >
-            <span className="mr-2">←</span>
+            <span className="mr-2">&larr;</span>
             ALL PROPERTIES
           </Link>
 
@@ -101,40 +106,34 @@ export default function PropertyDetail() {
           {/* Main Image */}
           <div className="mb-6 rounded-lg overflow-hidden shadow-lg">
             <img
-              src={property.image}
-              alt={property.name}
+              src={galleryImages[selectedImage]}
+              alt={`${property.name} - Image ${selectedImage + 1}`}
               className="w-full h-auto object-cover"
             />
           </div>
 
-          {/* Thumbnail Row (Placeholder) */}
-          <div className="flex gap-3 overflow-x-auto pb-2">
-            <button
-              onClick={() => setSelectedImage(0)}
-              className={`flex-shrink-0 h-20 w-20 rounded overflow-hidden border-2 transition-all ${
-                selectedImage === 0
-                  ? 'border-gold'
-                  : 'border-gray-300 hover:border-gold-light'
-              }`}
-            >
-              <img
-                src={property.image}
-                alt={`${property.name} thumbnail 1`}
-                className="w-full h-full object-cover"
-              />
-            </button>
-            {/* Additional thumbnail slots for future images */}
-            {[1, 2, 3].map((idx) => (
-              <div
-                key={idx}
-                className="flex-shrink-0 h-20 w-20 bg-gray-200 rounded border-2 border-gray-300 flex items-center justify-center"
-              >
-                <span className="text-gray-400 text-xs text-center px-2">
-                  Image {idx + 1}
-                </span>
-              </div>
-            ))}
-          </div>
+          {/* Thumbnail Row - only show if multiple images */}
+          {galleryImages.length > 1 && (
+            <div className="flex gap-3 overflow-x-auto pb-2">
+              {galleryImages.map((img, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => setSelectedImage(idx)}
+                  className={`flex-shrink-0 h-20 w-20 rounded overflow-hidden border-2 transition-all ${
+                    selectedImage === idx
+                      ? 'border-gold'
+                      : 'border-gray-300 hover:border-gold-light'
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`${property.name} thumbnail ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -199,9 +198,12 @@ export default function PropertyDetail() {
           <p className="text-gray-300 font-montserrat text-lg mb-8 max-w-2xl mx-auto">
             Get in touch with our team to learn more about investment opportunities or property leasing.
           </p>
-          <button className="inline-block px-10 py-4 bg-gold text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200 text-lg">
+          <Link
+            to="/contact"
+            className="inline-block px-10 py-4 bg-gold text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200 text-lg"
+          >
             Inquire About This Property
-          </button>
+          </Link>
         </div>
       </section>
     </div>
