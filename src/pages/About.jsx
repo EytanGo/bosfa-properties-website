@@ -7,7 +7,7 @@ export default function About() {
       {/* Hero Section */}
       <PageHero
         title="ABOUT US"
-        subtitle="A Private, Family-Owned Real Estate Company"
+        subtitle="BOSFA Properties is a private and family owned real estate investment company focusing on development and value add distressed assets."
         backgroundImage={images.aboutHero}
         tall
       />
@@ -25,65 +25,32 @@ export default function About() {
 
         <div className="space-y-6 text-gray-700 font-noto">
           <p className="text-base leading-relaxed">
-            BOSFA Properties was founded by Daniel Goldstein, a visionary entrepreneur whose passion for real estate and community development has shaped the company's direction for decades. Beginning his career in 1981 as an electrician, Daniel demonstrated the work ethic and attention to detail that would become hallmarks of BOSFA's approach to property management and development.
+            Founded by Daniel Goldstein, BOSFA Properties is a private and family-owned real estate company focusing on development and distressed assets headquartered in New York, Nassau County. BOSFA Properties has acquired over 50 real estate assets, located throughout the United States, since its inception.
           </p>
 
           <p className="text-base leading-relaxed">
-            Daniel's entrepreneurial journey led him to establish an import company in Israel, where he honed his business acumen and developed a deep understanding of international commerce. This experience prepared him for the next chapter of his career when he joined E&M Management, where he gained extensive expertise in the real estate sector. Recognizing the potential to create something uniquely his own, Daniel founded BOSFA Properties alongside his son Aron, bringing together their shared vision of finding value in underappreciated real estate situations and transforming them into thriving communities.
+            Our portfolio is focused on developing, rehabilitating, and stabilizing neglected assets in growing communities. We have an outstanding track record in purchasing, financing, and managing those assets and bringing those once-neglected assets back to their original pristine condition.
           </p>
 
           <p className="text-base leading-relaxed">
-            Today, BOSFA Properties manages a diverse portfolio spanning multiple states, with a focus on residential, commercial, and development projects. Beyond his professional achievements, Daniel's commitment to service extends to his volunteer work as a firefighter and his role as a trustee at Lawrence. His life exemplifies the values that guide BOSFA: integrity, dedication, and a genuine desire to improve the communities we serve.
+            BOSFA Properties team consists of in-house professionals in the areas of Finance, Property Managers, Project Managers, Leasing Specialists, and Acquisition Specialists. Not only they understand the market, but they also appreciate the company's core values and goals.
           </p>
         </div>
       </section>
 
-      {/* Meet the Team Section */}
+      {/* Our People / Meet the Team Section */}
       <section className="bg-navy-dark py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="mb-12 text-center">
+          <div className="mb-8 text-center">
             <p className="text-gold font-noto text-xs font-semibold uppercase tracking-widest mb-4">
-              MEET THE TEAM
+              OUR PEOPLE
             </p>
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
-              Leadership
+              Meet the Team
             </h2>
-            <p className="text-gray-300 font-noto text-base max-w-2xl mx-auto">
-              Founded by visionary entrepreneurs Daniel and Aron Goldstein, BOSFA is built on decades of real estate expertise and a commitment to transforming underappreciated properties into thriving communities.
+            <p className="text-gray-300 font-noto text-base max-w-3xl mx-auto">
+              From property managers and superintendents to investor relations and development â hear directly from the people who make BOSFA Properties run.
             </p>
-          </div>
-
-          {/* Team Members Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
-            {/* Daniel Goldstein */}
-            <div className="text-center">
-              <div className="mb-6 h-64 bg-gray-700 rounded-lg flex items-center justify-center">
-                <div className="text-gray-500 text-center">
-                  <p className="font-noto text-sm">Daniel Goldstein</p>
-                  <p className="font-noto text-xs text-gray-400">Founder</p>
-                </div>
-              </div>
-              <h3 className="text-white font-playfair text-2xl font-bold mb-2">Daniel Goldstein</h3>
-              <p className="text-gold font-noto text-sm font-semibold uppercase tracking-wider mb-4">Founder</p>
-              <p className="text-gray-300 font-noto text-sm leading-relaxed">
-                A visionary entrepreneur with decades of real estate expertise, Daniel founded BOSFA Properties to transform underappreciated properties into vibrant communities. His commitment to integrity and excellence guides every project.
-              </p>
-            </div>
-
-            {/* Aron Goldstein */}
-            <div className="text-center">
-              <div className="mb-6 h-64 bg-gray-700 rounded-lg flex items-center justify-center">
-                <div className="text-gray-500 text-center">
-                  <p className="font-noto text-sm">Aron Goldstein</p>
-                  <p className="font-noto text-xs text-gray-400">Co-Founder</p>
-                </div>
-              </div>
-              <h3 className="text-white font-playfair text-2xl font-bold mb-2">Aron Goldstein</h3>
-              <p className="text-gold font-noto text-sm font-semibold uppercase tracking-wider mb-4">Co-Founder</p>
-              <p className="text-gray-300 font-noto text-sm leading-relaxed">
-                Working alongside his father, Aron brings fresh perspectives and strategic vision to BOSFA's portfolio. Together, they've built a company that creates lasting value and positive community impact.
-              </p>
-            </div>
           </div>
 
           {/* Video Embed */}
@@ -98,6 +65,65 @@ export default function About() {
                 allowFullScreen
                 className="w-full h-full"
               ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership / Our Team Section */}
+      <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-12 text-center">
+            <p className="text-gold font-noto text-xs font-semibold uppercase tracking-widest mb-4">
+              LEADERSHIP
+            </p>
+            <h2 className="text-3xl md:text-4xl font-playfair font-bold text-navy mb-6">
+              Our Team
+            </h2>
+          </div>
+
+          {/* Daniel Goldstein */}
+          <div className="mb-16">
+            <p className="text-gold font-noto text-xs font-semibold uppercase tracking-widest mb-2">
+              FOUNDER & MANAGING MEMBER
+            </p>
+            <h3 className="text-2xl md:text-3xl font-playfair font-bold text-navy mb-6">
+              Daniel Goldstein
+            </h3>
+            <div className="space-y-5 text-gray-700 font-noto text-base leading-relaxed">
+              <p>
+                Daniel Goldstein is the Founder and Managing Member of BOSFA Properties. Daniel's resume is extensive. He began his career in 1981 as an electrician, working in both the construction and electrical field.
+              </p>
+              <p>
+                In 1992, he started an import and manufacturing company in Israel. Under his direction, the company grew to #3 in sales in its category in the State of Israel. The company was subsequently sold in 1998. At the same time, Daniel was making his foray into real estate, managing his family portfolio in both rentals and property sales in Israel.
+              </p>
+              <p>
+                In 2010, Daniel joined E&M Management a prominent real estate company that owned and operated over 12,000 units in the New York area, where he worked on the acquisition, rehabilitation, and repositioning of the properties, including a portfolio of over 3,400 apartments. Since then Daniel and his son Aron started BOSFA Properties. They focus on the Long Island metro area, acquiring and developing properties that enhance the community and surrounding populated area.
+              </p>
+              <p>
+                The fervor with which Daniel conducts himself in business is surpassed only in his philanthropic endeavors. Mr. Goldstein joined the Meadowmere Park Fire Department as a Volunteer FireFighter and was later promoted to Captain. Daniel also served as village of Lawrence Trustee for over 4 years before stepping down in 2020.
+              </p>
+            </div>
+          </div>
+
+          {/* Benjamin Diehl */}
+          <div>
+            <p className="text-gold font-noto text-xs font-semibold uppercase tracking-widest mb-2">
+              DEVELOPMENT MANAGER
+            </p>
+            <h3 className="text-2xl md:text-3xl font-playfair font-bold text-navy mb-6">
+              Benjamin Diehl
+            </h3>
+            <div className="space-y-5 text-gray-700 font-noto text-base leading-relaxed">
+              <p>
+                Benjamin Diehl, Development Manager at BOSFA Properties, is a seasoned professional with a keen eye for detail and a strategic approach. He manages a portfolio encompassing over 2 million square feet of development space.
+              </p>
+              <p>
+                Benjamin's journey at BOSFA Properties began on the leasing and management team, where he gained invaluable insights into the intricacies of property operations. His passion for architecture and development led him to transition seamlessly into his current role, where he plays a pivotal role in every stage of the development process, from acquisition to construction.
+              </p>
+              <p>
+                With a Bachelor's degree in Architecture from Virginia Tech, Benjamin brings a unique blend of design expertise and project management skills to his role. His commitment to excellence and dedication to delivering exceptional results make him an indispensable asset to the BOSFA Properties team.
+              </p>
             </div>
           </div>
         </div>
