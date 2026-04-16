@@ -59,7 +59,7 @@ export default function About() {
               <iframe
                 width="100%"
                 height="100%"
-                src="https://www.youtube.com/embed/Nqe3RQOx70s"
+                src="https://www.youtube.com/embed/gxCxf5MNPO8"
                 title="BOSFA Properties Team"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
