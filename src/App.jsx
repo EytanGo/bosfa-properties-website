@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -14,10 +14,50 @@ import InvestorPortal from './pages/InvestorPortal';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
   return null;
+}
+
+function PageTransition({ children }) {
+  const location = useLocation();
+  const [displayLocation, setDisplayLocation] = useState(location);
+  const [transitionStage, setTransitionStage] = useState('fadeIn');
+
+  useEffect(() => {
+    if (location.pathname !== displayLocation.pathname) {
+      setTransitionStage('fadeOut');
+    }
+  }, [location, displayLocation]);
+
+  return (
+    <div
+      className={`transition-all duration-300 ease-in-out ${
+        transitionStage === 'fadeIn' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'
+      }`}
+      onTransitionEnd={() => {
+        if (transitionStage === 'fadeOut') {
+          setTransitionStage('fadeIn');
+          setDisplayLocation(location);
+        }
+      }}
+    >
+      <Routes location={displayLocation}>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/properties" element={<Properties />} />
+        <Route path="/properties/:id" element={<PropertyDetail />} />
+        <Route path="/investment-strategy" element={<InvestmentStrategy />} />
+        <Route path="/media" element={<Media />} />
+        <Route path="/media/:slug" element={<MediaArticle />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/investor-portal" element={<InvestorPortal />} />
+      </Routes>
+    </div>
+  );
 }
 
 function App() {
@@ -26,17 +66,7 @@ function App() {
       <ScrollToTop />
       <Header />
       <main className="flex-1">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/properties" element={<Properties />} />
-          <Route path="/properties/:id" element={<PropertyDetail />} />
-          <Route path="/investment-strategy" element={<InvestmentStrategy />} />
-          <Route path="/media" element={<Media />} />
-          <Route path="/media/:slug" element={<MediaArticle />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/investor-portal" element={<InvestorPortal />} />
-        </Routes>
+        <PageTransition />
       </main>
       <Footer />
     </div>
