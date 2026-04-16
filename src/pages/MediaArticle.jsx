@@ -8,17 +8,17 @@ export default function MediaArticle() {
   if (!article) {
     return (
       <div className="w-full">
-        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto mt-20">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto pt-28">
           <div className="text-center">
             <h1 className="text-4xl font-playfair font-bold text-navy mb-4">
               Article Not Found
             </h1>
-            <p className="text-gray-600 font-montserrat text-lg mb-8">
+            <p className="text-gray-600 font-noto text-lg mb-8">
               We couldn&apos;t find the article you&apos;re looking for.
             </p>
             <Link
               to="/media"
-              className="inline-block px-8 py-3 bg-navy text-white font-montserrat font-semibold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors"
+              className="inline-block px-8 py-3 bg-navy text-white font-noto font-semibold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors"
             >
               Back to Media
             </Link>
@@ -35,17 +35,17 @@ export default function MediaArticle() {
   return (
     <div className="w-full">
       {/* Header */}
-      <section className="bg-navy py-10 md:py-16 px-4 sm:px-6 lg:px-8 mt-20">
+      <section className="bg-navy py-10 md:py-16 px-4 sm:px-6 lg:px-8 pt-28">
         <div className="max-w-4xl mx-auto">
           <Link
             to="/media"
-            className="inline-flex items-center text-gold hover:text-gold-light transition-colors mb-8 font-montserrat font-semibold"
+            className="inline-flex items-center text-gold hover:text-gold-light transition-colors mb-8 font-noto font-semibold"
           >
             <span className="mr-2">&larr;</span>
             ALL ARTICLES
           </Link>
 
-          <p className="text-gold font-montserrat text-sm font-semibold uppercase tracking-widest mb-4">
+          <p className="text-gold font-noto text-sm font-semibold uppercase tracking-widest mb-4">
             PRESS COVERAGE
           </p>
 
@@ -53,7 +53,7 @@ export default function MediaArticle() {
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-gray-300 font-montserrat text-sm">
+          <div className="flex flex-wrap items-center gap-4 text-gray-300 font-noto text-sm">
             <span>{article.date}</span>
             {article.author && (
               <>
@@ -91,7 +91,7 @@ export default function MediaArticle() {
             {contentParagraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className="text-gray-700 font-montserrat text-lg leading-relaxed mb-6"
+                className="text-gray-700 font-noto text-lg leading-relaxed mb-6"
               >
                 {paragraph}
               </p>
@@ -155,7 +155,7 @@ export default function MediaArticle() {
               href={article.originalSource}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-3 bg-navy text-white font-montserrat font-bold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors duration-200"
+              className="inline-block px-8 py-3 bg-navy text-white font-noto font-bold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors duration-200"
             >
               Read Original Article &rarr;
             </a>
@@ -167,7 +167,7 @@ export default function MediaArticle() {
                 href={article.newsArticleUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 border-2 border-navy text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-navy hover:text-white transition-colors duration-200"
+                className="inline-block px-8 py-3 border-2 border-navy text-navy font-noto font-bold uppercase tracking-widest rounded hover:bg-navy hover:text-white transition-colors duration-200"
               >
                 {article.newsArticleLabel || 'View Newspaper Article'} &rarr;
               </a>
@@ -177,7 +177,7 @@ export default function MediaArticle() {
           <div>
             <Link
               to="/media"
-              className="inline-block px-8 py-3 bg-gold text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200"
+              className="inline-block px-8 py-3 bg-gold text-navy font-noto font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200"
             >
               Back to Media &amp; Press
             </Link>
