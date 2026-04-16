@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { images } from '../data/images';
 import PageHero from '../components/PageHero';
 
@@ -113,12 +112,14 @@ export default function InvestorPortal() {
           </p>
 
           {/* Login Button */}
-          <Link
-            to="#"
+          <a
+            href="https://investor.bosfaproperties.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-gold hover:bg-gold/90 text-navy font-noto font-bold py-4 px-10 rounded transition-colors duration-300 uppercase tracking-wide text-lg mb-8 shadow-lg hover:shadow-xl"
           >
             Log In to Investor Portal
-          </Link>
+          </a>
 
           {/* Support Text */}
           <p className="text-gray-700 font-noto">
