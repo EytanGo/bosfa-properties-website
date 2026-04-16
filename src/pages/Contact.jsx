@@ -44,12 +44,12 @@ export default function Contact() {
           {/* Left Column - Contact Information */}
           <div>
             {/* Gold Label */}
-            <p className="text-sm font-montserrat text-gold font-semibold uppercase tracking-widest mb-3">
+            <p className="text-xs font-noto text-gold font-semibold uppercase tracking-widest mb-3">
               Reach Out
             </p>
 
             {/* Heading */}
-            <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-navy uppercase mb-6">
+            <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-navy uppercase mb-6">
               BOSFA Properties
             </h2>
 
@@ -78,7 +78,7 @@ export default function Contact() {
                   <h3 className="text-lg font-playfair font-bold text-navy mb-2 uppercase">
                     Address
                   </h3>
-                  <p className="text-gray-700 font-montserrat">
+                  <p className="text-gray-700 font-noto">
                     301A Central Ave<br />
                     Lawrence, NY 11559
                   </p>
@@ -101,7 +101,7 @@ export default function Contact() {
                   <h3 className="text-lg font-playfair font-bold text-navy mb-2 uppercase">
                     Phone
                   </h3>
-                  <p className="text-gray-700 font-montserrat">
+                  <p className="text-gray-700 font-noto">
                     <a
                       href="tel:516.412.6100"
                       className="hover:text-gold transition-colors duration-300"
@@ -129,7 +129,7 @@ export default function Contact() {
                   <h3 className="text-lg font-playfair font-bold text-navy mb-2 uppercase">
                     Email
                   </h3>
-                  <div className="space-y-2 text-gray-700 font-montserrat">
+                  <div className="space-y-2 text-gray-700 font-noto">
                     <p>
                       <span className="font-semibold">General:</span>{' '}
                       <a
@@ -170,7 +170,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-sm font-montserrat font-semibold text-navy mb-2 uppercase"
+                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
                 >
                   Your Name
                 </label>
@@ -181,7 +181,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-montserrat text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
                   placeholder="John Doe"
                 />
               </div>
@@ -190,7 +190,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-montserrat font-semibold text-navy mb-2 uppercase"
+                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
                 >
                   Your Email
                 </label>
@@ -201,7 +201,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-montserrat text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
                   placeholder="john@example.com"
                 />
               </div>
@@ -210,7 +210,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="subject"
-                  className="block text-sm font-montserrat font-semibold text-navy mb-2 uppercase"
+                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
                 >
                   Subject
                 </label>
@@ -221,7 +221,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-montserrat text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
+                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
                   placeholder="How can we help?"
                 />
               </div>
@@ -230,7 +230,7 @@ export default function Contact() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-sm font-montserrat font-semibold text-navy mb-2 uppercase"
+                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
                 >
                   Message
                 </label>
@@ -241,7 +241,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-montserrat text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300 resize-none"
                   placeholder="Please tell us more about your inquiry..."
                 ></textarea>
               </div>
@@ -249,7 +249,7 @@ export default function Contact() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gold hover:bg-gold/90 text-navy font-montserrat font-bold py-3 px-6 rounded transition-colors duration-300 uppercase tracking-wide"
+                className="w-full bg-gold hover:bg-gold/90 text-navy font-noto font-bold py-3 px-6 rounded transition-colors duration-300 uppercase tracking-wide"
               >
                 Send Message
               </button>
