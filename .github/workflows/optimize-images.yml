@@ -3,6 +3,9 @@ name: Optimize Images
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   optimize:
     runs-on: ubuntu-latest
