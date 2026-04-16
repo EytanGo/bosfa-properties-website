@@ -50,7 +50,7 @@ export default function InvestorPortal() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="mt-20">
+      <div className="pt-20">
         <div className="relative bg-navy py-16 sm:py-24 px-6 sm:px-8 lg:px-12 flex items-center justify-center min-h-96">
           {/* Lock Icon Background */}
           <div className="absolute inset-0 flex items-center justify-center opacity-5">
@@ -83,10 +83,10 @@ export default function InvestorPortal() {
               />
             </svg>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white uppercase mb-4 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white uppercase mb-4 tracking-tight">
               Investor Portal
             </h1>
-            <p className="text-lg sm:text-xl font-montserrat text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg sm:text-xl font-noto text-gray-300 max-w-2xl mx-auto">
               Secure access to your investment information and portfolio performance
             </p>
           </div>
@@ -98,15 +98,15 @@ export default function InvestorPortal() {
         <div className="max-w-5xl mx-auto">
           {/* Section Header */}
           <div className="mb-12">
-            <p className="text-sm font-montserrat text-gold font-semibold uppercase tracking-widest mb-3">
+            <p className="text-sm font-noto text-gold font-semibold uppercase tracking-widest mb-3">
               Portal Access
             </p>
-            <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-navy uppercase mb-4">
+            <h2 className="text-3xl sm:text-4xl font-playfair font-bold text-navy uppercase mb-4">
               Everything You Need in One Place
             </h2>
             <div className="w-12 h-1 bg-gold mb-8"></div>
-            <p className="text-lg font-montserrat text-gray-700 max-w-3xl leading-relaxed">
-              Our investor portal provides secure, 24/7 access to your investment information. Review performance metrics, download documents, and stay connected with the BOSFA Properties team—all from a single, easy-to-use dashboard.
+            <p className="text-lg font-noto text-gray-700 max-w-3xl leading-relaxed">
+              Our investor portal provides secure, 24/7 access to your investment information. Review performance metrics, download documents, and stay connected with the BOSFA Properties teamâall from a single, easy-to-use dashboard.
             </p>
           </div>
 
@@ -120,7 +120,7 @@ export default function InvestorPortal() {
                 <h3 className="text-xl sm:text-2xl font-playfair font-bold text-navy mb-3 uppercase">
                   {feature.title}
                 </h3>
-                <p className="text-gray-700 font-montserrat leading-relaxed">
+                <p className="text-gray-700 font-noto leading-relaxed">
                   {feature.description}
                 </p>
               </div>
@@ -133,28 +133,28 @@ export default function InvestorPortal() {
       <section className="bg-gray-50 py-16 sm:py-20 px-6 sm:px-8 lg:px-12">
         <div className="max-w-2xl mx-auto text-center">
           {/* Section Header */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-navy uppercase mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-playfair font-bold text-navy uppercase mb-6">
             Access Your Portal
           </h2>
-          <p className="text-lg font-montserrat text-gray-700 mb-10 leading-relaxed">
+          <p className="text-lg font-noto text-gray-700 mb-10 leading-relaxed">
             Ready to view your portfolio? Log in to your secure investor portal to access all your investment information, documents, and performance reports.
           </p>
 
           {/* Login Button */}
           <Link
             to="#"
-            className="inline-block bg-gold hover:bg-gold/90 text-navy font-montserrat font-bold py-4 px-10 rounded transition-colors duration-300 uppercase tracking-wide text-lg mb-8 shadow-lg hover:shadow-xl"
+            className="inline-block bg-gold hover:bg-gold/90 text-navy font-noto font-bold py-4 px-10 rounded transition-colors duration-300 uppercase tracking-wide text-lg mb-8 shadow-lg hover:shadow-xl"
           >
             Log In to Investor Portal
           </Link>
 
           {/* Support Text */}
-          <p className="text-gray-700 font-montserrat">
+          <p className="text-gray-700 font-noto">
             Need access? Contact us to request credentials
           </p>
           <a
             href="mailto:info@bosfamanagement.com"
-            className="text-gold font-montserrat font-semibold hover:text-gold/80 transition-colors duration-300 inline-block mt-3"
+            className="text-gold font-noto font-semibold hover:text-gold/80 transition-colors duration-300 inline-block mt-3"
           >
             info@bosfamanagement.com
           </a>
@@ -170,7 +170,7 @@ export default function InvestorPortal() {
               <h3 className="text-xl font-playfair font-bold text-navy mb-4 uppercase">
                 Bank-Level Security
               </h3>
-              <p className="text-gray-700 font-montserrat leading-relaxed">
+              <p className="text-gray-700 font-noto leading-relaxed">
                 Your information is protected with enterprise-grade encryption and security protocols. We use industry-leading authentication methods to ensure only authorized investors can access their portfolios.
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function InvestorPortal() {
               <h3 className="text-xl font-playfair font-bold text-navy mb-4 uppercase">
                 Dedicated Support
               </h3>
-              <p className="text-gray-700 font-montserrat leading-relaxed">
+              <p className="text-gray-700 font-noto leading-relaxed">
                 Our investor relations team is here to help. Whether you have questions about your documents, need technical assistance, or want to discuss your investments, we're available to support you.
               </p>
             </div>
