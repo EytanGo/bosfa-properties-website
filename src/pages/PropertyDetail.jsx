@@ -39,7 +39,7 @@ export default function PropertyDetail() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-navy py-8 md:py-12 px-4 sm:px-6 lg:px-8 pt-36">
+      <section className="bg-navy pb-8 md:pb-12 px-4 sm:px-6 lg:px-8 pt-32 md:pt-44">
         <div className="max-w-6xl mx-auto">
           <Link
             to="/properties"
