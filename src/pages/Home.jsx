@@ -110,12 +110,12 @@ function HeroCarousel() {
                   className="px-8 py-3 bg-gold text-navy font-noto font-bold uppercase text-xs tracking-widest hover:bg-gold-light transition-all duration-300"
                 >
                   {slide.ctaText}
-               0</Link>
+               </Link>
               </div>
             )}
 
             {/* Property Slides */}
-            {slide.title && (
+            {!slide.isMainIntro && slide.title && (
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
                 <h2 className="text-white font-heading text-3xl md:text-5xl font-bold mb-4">
                   {slide.title}
