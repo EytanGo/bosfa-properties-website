@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { images } from '../data/images';
 import PageHero from '../components/PageHero';
 
 export default function InvestorPortal() {
@@ -15,7 +16,8 @@ export default function InvestorPortal() {
         </svg>
       ),
       title: 'Real-Time Performance',
-      description: 'Access up-to-date financial reports, occupancy rates, and operational metrics for all your investments.',
+      description:
+        'Access up-to-date financial reports, occupancy rates, and operational metrics for all your investments.',
     },
     {
       icon: (
@@ -29,7 +31,8 @@ export default function InvestorPortal() {
         </svg>
       ),
       title: 'Document Library',
-      description: 'Download tax documents, K-1s, quarterly reports, and all important investment documentation in one secure location.',
+      description:
+        'Download tax documents, K-1s, quarterly reports, and all important investment documentation in one secure location.',
     },
     {
       icon: (
@@ -43,55 +46,20 @@ export default function InvestorPortal() {
         </svg>
       ),
       title: 'Investor Relations',
-      description: 'Stay connected with our team, receive updates on new opportunities, and communicate directly about your portfolio.',
+      description:
+        'Stay connected with our team, receive updates on new opportunities, and communicate directly about your portfolio.',
     },
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <div className="pt-20">
-        <div className="relative bg-navy py-16 sm:py-24 px-6 sm:px-8 lg:px-12 flex items-center justify-center min-h-96">
-          {/* Lock Icon Background */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-5">
-            <svg
-              className="w-64 h-64"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-
-          {/* Content */}
-          <div className="relative text-center max-w-3xl">
-            <svg
-              className="w-16 h-16 text-gold mx-auto mb-6"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              aria-hidden="true"
-            >
-              <path
-                fillRule="evenodd"
-                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                clipRule="evenodd"
-              />
-            </svg>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white uppercase mb-4 tracking-tight">
-              Investor Portal
-            </h1>
-            <p className="text-lg sm:text-xl font-noto text-gray-300 max-w-2xl mx-auto">
-              Secure access to your investment information and portfolio performance
-            </p>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        title="Investor Portal"
+        subtitle="Secure access to your investment information and portfolio performance"
+        backgroundImage={images.investmentBuilding}
+        tall
+      />
 
       {/* Portal Access Section */}
       <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12">
@@ -106,7 +74,10 @@ export default function InvestorPortal() {
             </h2>
             <div className="w-12 h-1 bg-gold mb-8"></div>
             <p className="text-lg font-noto text-gray-700 max-w-3xl leading-relaxed">
-              Our investor portal provides secure, 24/7 access to your investment information. Review performance metrics, download documents, and stay connected with the BOSFA Properties teamâall from a single, easy-to-use dashboard.
+              Our investor portal provides secure, 24/7 access to your investment
+              information. Review performance metrics, download documents, and stay
+              connected with the BOSFA Properties team\u2014all from a single, easy-to-use
+              dashboard.
             </p>
           </div>
 
@@ -137,7 +108,8 @@ export default function InvestorPortal() {
             Access Your Portal
           </h2>
           <p className="text-lg font-noto text-gray-700 mb-10 leading-relaxed">
-            Ready to view your portfolio? Log in to your secure investor portal to access all your investment information, documents, and performance reports.
+            Ready to view your portfolio? Log in to your secure investor portal to access
+            all your investment information, documents, and performance reports.
           </p>
 
           {/* Login Button */}
@@ -171,17 +143,20 @@ export default function InvestorPortal() {
                 Bank-Level Security
               </h3>
               <p className="text-gray-700 font-noto leading-relaxed">
-                Your information is protected with enterprise-grade encryption and security protocols. We use industry-leading authentication methods to ensure only authorized investors can access their portfolios.
+                Your information is protected with enterprise-grade encryption and security
+                protocols. We use industry-leading authentication methods to ensure only
+                authorized investors can access their portfolios.
               </p>
             </div>
-
             {/* Support */}
             <div>
               <h3 className="text-xl font-playfair font-bold text-navy mb-4 uppercase">
                 Dedicated Support
               </h3>
               <p className="text-gray-700 font-noto leading-relaxed">
-                Our investor relations team is here to help. Whether you have questions about your documents, need technical assistance, or want to discuss your investments, we're available to support you.
+                Our investor relations team is here to help. Whether you have questions
+                about your documents, need technical assistance, or want to discuss your
+                investments, we're available to support you.
               </p>
             </div>
           </div>
