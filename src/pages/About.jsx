@@ -38,23 +38,56 @@ export default function About() {
         </div>
       </section>
 
-      {/* Our People Section */}
+      {/* Meet the Team Section */}
       <section className="bg-navy-dark py-16 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="mb-12 text-center">
             <p className="text-gold font-noto text-xs font-semibold uppercase tracking-widest mb-4">
-              OUR PEOPLE
+              MEET THE TEAM
             </p>
             <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
-              Meet the Team
+              Leadership
             </h2>
             <p className="text-gray-300 font-noto text-base max-w-2xl mx-auto">
-              Our dedicated team brings decades of combined experience in real estate, development, and property management.
+              Founded by visionary entrepreneurs Daniel and Aron Goldstein, BOSFA is built on decades of real estate expertise and a commitment to transforming underappreciated properties into thriving communities.
             </p>
           </div>
 
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            {/* Daniel Goldstein */}
+            <div className="text-center">
+              <div className="mb-6 h-64 bg-gray-700 rounded-lg flex items-center justify-center">
+                <div className="text-gray-500 text-center">
+                  <p className="font-noto text-sm">Daniel Goldstein</p>
+                  <p className="font-noto text-xs text-gray-400">Founder</p>
+                </div>
+              </div>
+              <h3 className="text-white font-playfair text-2xl font-bold mb-2">Daniel Goldstein</h3>
+              <p className="text-gold font-noto text-sm font-semibold uppercase tracking-wider mb-4">Founder</p>
+              <p className="text-gray-300 font-noto text-sm leading-relaxed">
+                A visionary entrepreneur with decades of real estate expertise, Daniel founded BOSFA Properties to transform underappreciated properties into vibrant communities. His commitment to integrity and excellence guides every project.
+              </p>
+            </div>
+
+            {/* Aron Goldstein */}
+            <div className="text-center">
+              <div className="mb-6 h-64 bg-gray-700 rounded-lg flex items-center justify-center">
+                <div className="text-gray-500 text-center">
+                  <p className="font-noto text-sm">Aron Goldstein</p>
+                  <p className="font-noto text-xs text-gray-400">Co-Founder</p>
+                </div>
+              </div>
+              <h3 className="text-white font-playfair text-2xl font-bold mb-2">Aron Goldstein</h3>
+              <p className="text-gold font-noto text-sm font-semibold uppercase tracking-wider mb-4">Co-Founder</p>
+              <p className="text-gray-300 font-noto text-sm leading-relaxed">
+                Working alongside his father, Aron brings fresh perspectives and strategic vision to BOSFA's portfolio. Together, they've built a company that creates lasting value and positive community impact.
+              </p>
+            </div>
+          </div>
+
           {/* Video Embed */}
-          <div className="mt-12 flex justify-center">
+          <div className="flex justify-center">
             <div className="w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-lg">
               <iframe
                 width="100%"
