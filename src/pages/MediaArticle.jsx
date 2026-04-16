@@ -14,7 +14,7 @@ export default function MediaArticle() {
               Article Not Found
             </h1>
             <p className="text-gray-600 font-montserrat text-lg mb-8">
-              We couldn't find the article you're looking for.
+              We couldn&apos;t find the article you&apos;re looking for.
             </p>
             <Link
               to="/media"
@@ -27,6 +27,10 @@ export default function MediaArticle() {
       </div>
     );
   }
+
+  const contentParagraphs = Array.isArray(article.content)
+    ? article.content
+    : [article.content || article.excerpt];
 
   return (
     <div className="w-full">
@@ -51,6 +55,12 @@ export default function MediaArticle() {
 
           <div className="flex flex-wrap items-center gap-4 text-gray-300 font-montserrat text-sm">
             <span>{article.date}</span>
+            {article.author && (
+              <>
+                <span className="text-gold">&bull;</span>
+                <span>By {article.author}</span>
+              </>
+            )}
             {article.source && (
               <>
                 <span className="text-gold">&bull;</span>
@@ -78,25 +88,102 @@ export default function MediaArticle() {
       <section className="py-8 md:py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto">
           <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 font-montserrat text-lg leading-relaxed mb-6">
-              {article.content || article.excerpt}
-            </p>
+            {contentParagraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-gray-700 font-montserrat text-lg leading-relaxed mb-6"
+              >
+                {paragraph}
+              </p>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Back to Media */}
+      {/* Video Section */}
+      {article.videoUrl && (
+        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <video
+              controls
+              className="w-full rounded-lg shadow-lg"
+              preload="metadata"
+            >
+              <source src={article.videoUrl} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </section>
+      )}
+
+      {/* YouTube Video Section */}
+      {article.youtubeUrl && (
+        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <div className="relative w-full pb-[56.25%] bg-black rounded-lg overflow-hidden shadow-lg">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full"
+                src={article.youtubeUrl}
+                title={article.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Newspaper Image */}
+      {article.newspaperImage && (
+        <section className="py-8 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <img
+              src={article.newspaperImage}
+              alt={`${article.source} newspaper clipping`}
+              className="w-full rounded-lg shadow-lg"
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Source Links */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <Link
-            to="/media"
-            className="inline-block px-8 py-3 bg-gold text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200"
-          >
-            Back to Media &amp; Press
-          </Link>
+        <div className="max-w-4xl mx-auto text-center space-y-4">
+          {article.originalSource && (
+            <a
+              href={article.originalSource}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-3 bg-navy text-white font-montserrat font-bold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors duration-200"
+            >
+              Read Original Article &rarr;
+            </a>
+          )}
+
+          {article.newsArticleUrl && (
+            <div>
+              <a
+                href={article.newsArticleUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 border-2 border-navy text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-navy hover:text-white transition-colors duration-200"
+              >
+                {article.newsArticleLabel || 'View Newspaper Article'} &rarr;
+              </a>
+            </div>
+          )}
+
+          <div>
+            <Link
+              to="/media"
+              className="inline-block px-8 py-3 bg-gold text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200"
+            >
+              Back to Media &amp; Press
+            </Link>
+          </div>
         </div>
       </section>
     </div>
   );
 }
-
