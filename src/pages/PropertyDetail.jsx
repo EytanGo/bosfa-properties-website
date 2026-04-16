@@ -189,6 +189,38 @@ export default function PropertyDetail() {
         </div>
       </section>
 
+      {/* Construction Update Video - Gardens at Buffalo */}
+      {property.id === 'gardens-at-buffalo' && (
+        <section className="bg-navy py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-8">
+              <p className="text-gold font-noto text-xs font-semibold uppercase tracking-widest mb-4">
+                Construction Update
+              </p>
+              <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-4">
+                Progress on the Ground
+              </h2>
+              <p className="text-gray-300 font-noto text-base max-w-3xl mx-auto">
+                Mayor Robert Kennedy of Freeport joins the BOSFA Properties team on-site to walk through the demolition and foundation progress — and share the vision for this 200-unit, multi-generational community.
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-full max-w-4xl aspect-video rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/nvKhnoqLMy4"
+                  title="Construction Update - Gardens at Buffalo"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA Section */}
       <section className="py-16 md:py-20 px-4 sm:px-6 lg:px-8 bg-navy">
         <div className="max-w-6xl mx-auto text-center">
