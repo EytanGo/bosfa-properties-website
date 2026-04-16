@@ -49,7 +49,7 @@ export default function About() {
               Meet the Team
             </h2>
             <p className="text-gray-300 font-noto text-base max-w-3xl mx-auto">
-              From property managers and superintendents to investor relations and development â hear directly from the people who make BOSFA Properties run.
+              From property managers and superintendents to investor relations and development — hear directly from the people who make BOSFA Properties run.
             </p>
           </div>
 
