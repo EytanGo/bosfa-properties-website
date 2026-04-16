@@ -16,12 +16,12 @@ export default function PropertyDetail() {
             <h1 className="text-4xl font-playfair font-bold text-navy mb-4">
               Property Not Found
             </h1>
-            <p className="text-gray-600 font-montserrat text-lg mb-8">
+            <p className="text-gray-600 font-noto text-lg mb-8">
               We couldn't find the property you're looking for.
             </p>
             <Link
               to="/properties"
-              className="inline-block px-8 py-3 bg-navy text-white font-montserrat font-semibold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors"
+              className="inline-block px-8 py-3 bg-navy text-white font-noto font-semibold uppercase tracking-widest rounded hover:bg-navy-dark transition-colors"
             >
               Back to Properties
             </Link>
@@ -39,25 +39,25 @@ export default function PropertyDetail() {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-navy py-8 md:py-12 px-4 sm:px-6 lg:px-8 mt-20">
+      <section className="bg-navy py-8 md:py-12 px-4 sm:px-6 lg:px-8 pt-28">
         <div className="max-w-6xl mx-auto">
           <Link
             to="/properties"
-            className="inline-flex items-center text-gold hover:text-gold-light transition-colors mb-8 font-montserrat font-semibold"
+            className="inline-flex items-center text-gold hover:text-gold-light transition-colors mb-8 font-noto font-semibold"
           >
             <span className="mr-2">&larr;</span>
             ALL PROPERTIES
           </Link>
 
-          <p className="text-gold font-montserrat text-sm font-semibold uppercase tracking-widest mb-4">
+          <p className="text-gold font-noto text-sm font-semibold uppercase tracking-widest mb-4">
             {property.category.toUpperCase()}
           </p>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-white mb-4 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold text-white mb-4 leading-tight">
             {property.name}
           </h1>
 
-          <p className="text-gray-300 font-montserrat text-lg">
+          <p className="text-gray-300 font-noto text-lg">
             {property.address}
           </p>
         </div>
@@ -69,7 +69,7 @@ export default function PropertyDetail() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {/* Units */}
             <div className="text-center">
-              <p className="text-gray-600 font-montserrat text-sm uppercase tracking-widest mb-2">
+              <p className="text-gray-600 font-noto text-sm uppercase tracking-widest mb-2">
                 Units
               </p>
               <p className="text-2xl md:text-3xl font-playfair font-bold text-navy">
@@ -79,7 +79,7 @@ export default function PropertyDetail() {
 
             {/* Sq Ft */}
             <div className="text-center">
-              <p className="text-gray-600 font-montserrat text-sm uppercase tracking-widest mb-2">
+              <p className="text-gray-600 font-noto text-sm uppercase tracking-widest mb-2">
                 Sq Ft
               </p>
               <p className="text-2xl md:text-3xl font-playfair font-bold text-navy">
@@ -89,7 +89,7 @@ export default function PropertyDetail() {
 
             {/* Acquired */}
             <div className="text-center col-span-2 md:col-span-1">
-              <p className="text-gray-600 font-montserrat text-sm uppercase tracking-widest mb-2">
+              <p className="text-gray-600 font-noto text-sm uppercase tracking-widest mb-2">
                 Acquired
               </p>
               <p className="text-2xl md:text-3xl font-playfair font-bold text-navy">
@@ -150,7 +150,7 @@ export default function PropertyDetail() {
               <h3 className="text-xl font-playfair font-bold text-navy mb-4">
                 Project Overview
               </h3>
-              <p className="text-gray-700 font-montserrat text-lg leading-relaxed">
+              <p className="text-gray-700 font-noto text-lg leading-relaxed">
                 {property.description}
               </p>
             </div>
@@ -162,7 +162,7 @@ export default function PropertyDetail() {
                 <h3 className="text-xl font-playfair font-bold text-navy mb-4">
                   Neighborhood
                 </h3>
-                <p className="text-gray-700 font-montserrat text-lg">
+                <p className="text-gray-700 font-noto text-lg">
                   {property.neighborhood}
                 </p>
               </div>
@@ -176,7 +176,7 @@ export default function PropertyDetail() {
                   {property.transportation.map((transit, idx) => (
                     <li
                       key={idx}
-                      className="text-gray-700 font-montserrat text-lg flex items-center"
+                      className="text-gray-700 font-noto text-lg flex items-center"
                     >
                       <span className="w-2 h-2 bg-gold rounded-full mr-3"></span>
                       {transit}
@@ -195,12 +195,12 @@ export default function PropertyDetail() {
           <h2 className="text-3xl md:text-4xl font-playfair font-bold text-white mb-6">
             Interested in This Property?
           </h2>
-          <p className="text-gray-300 font-montserrat text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-gray-300 font-noto text-lg mb-8 max-w-2xl mx-auto">
             Get in touch with our team to learn more about investment opportunities or property leasing.
           </p>
           <Link
             to="/contact"
-            className="inline-block px-10 py-4 bg-gold text-navy font-montserrat font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200 text-lg"
+            className="inline-block px-10 py-4 bg-gold text-navy font-noto font-bold uppercase tracking-widest rounded hover:bg-gold-light transition-colors duration-200 text-lg"
           >
             Inquire About This Property
           </Link>
