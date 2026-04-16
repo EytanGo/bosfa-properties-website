@@ -28,7 +28,7 @@ export const images = {
   nassauPlaza: '/images/Nassau_Plaza_01.jpg',
 
   // About page
-  aboutHero: '/images/About_Us_01.jpg',
+  aboutHero: `${BASE}/c8010af3f_WhatsAppImage2026-04-14at181351.jpg`,
 
   // Investment building
   investmentBuilding: `${BASE}/6859748cb_WhatsAppImage2026-04-14at180856.jpeg`,
