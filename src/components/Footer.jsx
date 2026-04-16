@@ -21,19 +21,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Contact Column */}
           <div>
-            <h3 className="text-xs font-montserrat uppercase tracking-widest font-bold mb-6 text-white">
+            <h3 className="text-xs font-noto uppercase tracking-widest font-bold mb-6 text-white">
               Contact Us
             </h3>
-            <div className="space-y-4 text-sm font-montserrat text-gray-300">
+            <div className="space-y-4 text-sm font-noto text-gray-300">
               {/* Phone */}
               <div className="flex items-start gap-3">
                 <svg
                   className="w-5 h-5 text-gold flex-shrink-0 mt-0.5"
                   fill="currentColor"
-                  viewBox="0 0 20 20"
+                  viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.822l.04.26a1 1 0 00.987.822h3.468a1 1 0 00.987-.822l.04-.26A1 1 0 0110.847 2H13a1 1 0 011 1v2.847a1 1 0 01-.822.986l-.26.04a1 1 0 00-.822.987v3.468a1 1 0 00.822.987l.26.04a1 1 0 01.822.986V17a1 1 0 01-1 1h-2.153a1 1 0 01-.986-.822l-.04-.26a1 1 0 00-.987-.822H5.468a1 1 0 00-.987.822l-.04.26A1 1 0 014.453 18H2a1 1 0 01-1-1v-2.847a1 1 0 01.822-.986l.26-.04a1 1 0 00.822-.987V7.468a1 1 0 00-.822-.987l-.26-.04A1 1 0 012 5.468V3z" />
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                 </svg>
                 <a href="tel:+15164126100" className="hover:text-gold transition-colors">
                   516.412.6100
@@ -83,7 +83,7 @@ export default function Footer() {
 
           {/* Navigation Column */}
           <div>
-            <h3 className="text-xs font-montserrat uppercase tracking-widest font-bold mb-6 text-white">
+            <h3 className="text-xs font-noto uppercase tracking-widest font-bold mb-6 text-white">
               Navigation
             </h3>
             <nav className="space-y-2">
@@ -91,7 +91,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className="block text-sm font-montserrat text-gray-300 hover:text-gold transition-colors"
+                  className="block text-sm font-noto text-gray-300 hover:text-gold transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -101,10 +101,10 @@ export default function Footer() {
 
           {/* Hours Column */}
           <div>
-            <h3 className="text-xs font-montserrat uppercase tracking-widest font-bold mb-6 text-white">
+            <h3 className="text-xs font-noto uppercase tracking-widest font-bold mb-6 text-white">
               Hours of Operation
             </h3>
-            <div className="space-y-2 text-sm font-montserrat text-gray-300">
+            <div className="space-y-2 text-sm font-noto text-gray-300">
               <div>
                 <div className="font-semibold text-white">Monday - Thursday</div>
                 <div>9:00 AM - 5:00 PM</div>
@@ -131,7 +131,7 @@ export default function Footer() {
           </Link>
 
           {/* Copyright Text */}
-          <div className="text-sm font-montserrat text-gray-400 text-center md:text-right">
+          <div className="text-sm font-noto text-gray-400 text-center md:text-right">
             &copy; {currentYear} BOSFA Properties. All rights reserved.
           </div>
         </div>
