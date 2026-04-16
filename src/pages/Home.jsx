@@ -107,7 +107,7 @@ function HeroCarousel() {
                 </p>
                 <Link
                   to={slide.ctaLink}
-                  className="px-8 py-3 bg-gold text-navy font-noto font-bold uppercase text-xs tracking-widest hover:bg-gold-light transition-all duration-300"
+                  className="px-8 py-3 border border-white/70 bg-transparent text-white font-noto font-semibold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all duration-300"
                 >
                   {slide.ctaText}
                </Link>
@@ -125,9 +125,9 @@ function HeroCarousel() {
                 </p>
                 <Link
                   to={slide.link}
-                  className="px-8 py-3 bg-gold text-navy font-noto font-bold uppercase text-xs tracking-widest hover:bg-gold-light transition-all duration-300"
+                  className="px-8 py-3 border border-white/70 bg-transparent text-white font-noto font-semibold uppercase text-xs tracking-widest hover:bg-white hover:text-black transition-all duration-300"
                 >
-                  See Project
+                  SEE PROJECT
                 </Link>
               </div>
             )}
