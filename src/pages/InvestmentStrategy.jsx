@@ -145,6 +145,34 @@ export default function InvestmentStrategy() {
           </div>
         </div>
       </section>
+
+      {/* Investment Inquiries Section */}
+      <section className="bg-navy py-16 sm:py-20 px-6 sm:px-8 lg:px-12">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-playfair font-bold text-white uppercase mb-4">
+            Investment Inquiries
+          </h2>
+          <p className="text-lg font-noto text-gray-300 mb-8">
+            For investment inquiries, please reach out
+          </p>
+          <div className="inline-block bg-white/10 backdrop-blur-sm rounded-lg p-8">
+            <h3 className="text-xl font-playfair font-bold text-gold mb-3">
+              Benny Goldstein
+            </h3>
+            <p className="text-gray-200 font-noto">
+              <a
+                href="tel:3476069342"
+                className="hover:text-gold transition-colors duration-300"
+              >
+                (347) 606-9342
+              </a>
+              <span className="text-gray-400 ml-2 text-sm italic">
+                (please text)
+              </span>
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
