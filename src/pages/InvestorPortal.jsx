@@ -76,7 +76,7 @@ export default function InvestorPortal() {
             <p className="text-lg font-noto text-gray-700 max-w-3xl leading-relaxed">
               Our investor portal provides secure, 24/7 access to your investment
               information. Review performance metrics, download documents, and stay
-              connected with the BOSFA Properties team\u2014all from a single, easy-to-use
+              connected with the BOSFA Properties team—all from a single, easy-to-use
               dashboard.
             </p>
           </div>
