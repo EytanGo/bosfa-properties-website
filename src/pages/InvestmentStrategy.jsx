@@ -23,7 +23,7 @@ export default function InvestmentStrategy() {
   return (
     <div>
       {/* Hero Section */}
-      <div className="mt-20">
+      <div className="pt-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 h-96 overflow-hidden">
           {/* Left side - Building Image */}
           <div
@@ -36,10 +36,10 @@ export default function InvestmentStrategy() {
           {/* Right side - Navy with Text */}
           <div className="bg-navy flex items-center justify-center px-6 sm:px-8 lg:px-12">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-playfair font-bold text-white uppercase mb-4 tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-white uppercase mb-4 tracking-tight">
                 Investment Strategy
               </h1>
-              <p className="text-lg font-montserrat text-gray-300">
+              <p className="text-lg font-noto text-gray-300">
                 Our proven approach to identifying and developing value-add properties
               </p>
             </div>
@@ -49,7 +49,7 @@ export default function InvestmentStrategy() {
 
       {/* Description Section */}
       <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12 max-w-6xl mx-auto">
-        <div className="space-y-6 text-gray-700 font-montserrat leading-relaxed">
+        <div className="space-y-6 text-gray-700 font-noto leading-relaxed">
           <p className="text-lg">
             BOSFA Properties specializes in acquiring, developing, and managing value-add multifamily and commercial properties throughout the Northeast. Our investment philosophy centers on identifying undervalued assets, executing strategic improvements, and creating sustainable, long-term value.
           </p>
@@ -66,10 +66,10 @@ export default function InvestmentStrategy() {
       <section className="bg-gray-50 py-16 sm:py-20 px-6 sm:px-8 lg:px-12">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-navy uppercase mb-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-playfair font-bold text-navy uppercase mb-4">
               Our Approach
             </h2>
-            <p className="text-lg font-montserrat text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg font-noto text-gray-600 max-w-2xl mx-auto">
               Three proven pillars that drive our investment success
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function InvestmentStrategy() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-700 font-montserrat leading-relaxed">
+                <p className="text-gray-700 font-noto leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
@@ -103,7 +103,7 @@ export default function InvestmentStrategy() {
       {/* Why BOSFA Section */}
       <section className="py-16 sm:py-20 px-6 sm:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-bold text-navy uppercase mb-12 text-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-playfair font-bold text-navy uppercase mb-12 text-center">
             Why Choose BOSFA
           </h2>
 
@@ -112,7 +112,7 @@ export default function InvestmentStrategy() {
               <h3 className="text-xl font-playfair font-bold text-gold mb-3 uppercase">
                 Experienced Team
               </h3>
-              <p className="text-gray-700 font-montserrat leading-relaxed">
+              <p className="text-gray-700 font-noto leading-relaxed">
                 Our leadership brings decades of combined experience in acquisitions, development, operations, and financial management across multifamily and commercial sectors.
               </p>
             </div>
@@ -121,7 +121,7 @@ export default function InvestmentStrategy() {
               <h3 className="text-xl font-playfair font-bold text-gold mb-3 uppercase">
                 Capital & Banking Relationships
               </h3>
-              <p className="text-gray-700 font-montserrat leading-relaxed">
+              <p className="text-gray-700 font-noto leading-relaxed">
                 We maintain strong relationships with a diverse network of lenders, institutional investors, and capital partners that enable us to move quickly on opportunities.
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function InvestmentStrategy() {
               <h3 className="text-xl font-playfair font-bold text-gold mb-3 uppercase">
                 Hands-On Management
               </h3>
-              <p className="text-gray-700 font-montserrat leading-relaxed">
+              <p className="text-gray-700 font-noto leading-relaxed">
                 We are actively involved in every aspect of property management, ensuring quality execution and accountability at every stage of the investment lifecycle.
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function InvestmentStrategy() {
               <h3 className="text-xl font-playfair font-bold text-gold mb-3 uppercase">
                 Long-Term Vision
               </h3>
-              <p className="text-gray-700 font-montserrat leading-relaxed">
+              <p className="text-gray-700 font-noto leading-relaxed">
                 We are committed to building lasting value and sustainable communities. We think in decades, not quarters, ensuring every decision benefits residents and investors alike.
               </p>
             </div>
