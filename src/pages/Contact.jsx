@@ -157,6 +157,16 @@ export default function Contact() {
                         rentals.on.long.island@gmail.com
                       </a>
                     </p>
+                    <p>
+                      <span className="font-semibold">Development:</span>{' '}
+                      <a
+                        href="mailto:ben@bosfamanagement.com"
+                        className="hover:text-gold transition-colors duration-300"
+                      >
+                        ben@bosfamanagement.com
+                      </a>
+                      <span className="block text-sm text-gray-500">Benjamin Diehl</span>
+                    </p>
                   </div>
                 </div>
               </div>
