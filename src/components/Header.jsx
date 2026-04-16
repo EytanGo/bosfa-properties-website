@@ -1,10 +1,20 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { images } from '../data/images';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { label: 'HOME', href: '/' },
@@ -19,7 +29,7 @@ export default function Header() {
   const isActive = (href) => location.pathname === href;
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-navy">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || isMenuOpen ? 'bg-navy shadow-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -37,7 +47,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`text-xs font-montserrat uppercase tracking-widest transition-all duration-200 ${
+                className={`text-xs font-noto uppercase tracking-widest transition-all duration-200 ${
                   isActive(link.href)
                     ? 'text-gold font-bold underline'
                     : 'text-white hover:text-gold'
@@ -89,7 +99,7 @@ export default function Header() {
                 key={link.href}
                 to={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`block py-3 text-xs font-montserrat uppercase tracking-widest transition-all duration-200 ${
+                className={`block py-3 text-xs font-noto uppercase tracking-widest transition-all duration-200 ${
                   isActive(link.href)
                     ? 'text-gold font-bold'
                     : 'text-white hover:text-gold'
