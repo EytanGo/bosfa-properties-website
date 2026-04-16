@@ -5,10 +5,10 @@ import { properties } from '../data/properties';
 import { images } from '../data/images';
 
 const CATEGORIES = [
-  { id: 'all', label: 'ALL' },
-  { id: 'residential', label: 'RESIDENTIAL' },
-  { id: 'development', label: 'DEVELOPMENT' },
-  { id: 'commercial', label: 'COMMERCIAL' },
+  { id: 'all', label: 'ALL', heading: 'Full Portfolio', sub: 'Browse all properties' },
+  { id: 'residential', label: 'RESIDENTIAL', heading: 'Residential', sub: 'Apartment & housing' },
+  { id: 'development', label: 'DEVELOPMENT', heading: 'Development', sub: 'New construction' },
+  { id: 'commercial', label: 'COMMERCIAL', heading: 'Commercial', sub: 'Office & retail' },
 ];
 
 export default function Properties() {
@@ -30,14 +30,16 @@ export default function Properties() {
       {/* Filter Buttons */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
+          <p className="text-center text-gold font-noto text-xs uppercase tracking-widest font-semibold mb-2">Filter by Type</p>
+          <h3 className="text-center text-navy font-heading text-2xl mb-8">Explore Our Portfolio</h3>
           <div className="flex flex-wrap gap-3 justify-center">
             {CATEGORIES.map(category => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 font-montserrat font-semibold uppercase text-sm tracking-widest transition-all duration-200 rounded ${
+                className={`px-6 py-3 font-noto font-semibold uppercase text-sm tracking-widest transition-all duration-200 rounded ${
                   activeCategory === category.id
-                    ? 'bg-white text-navy border-2 border-navy'
+                    ? 'bg-navy text-white border-2 border-navy'
                     : 'bg-transparent text-navy border-2 border-navy hover:bg-navy hover:text-white'
                 }`}
               >
@@ -71,18 +73,22 @@ export default function Properties() {
 
                   {/* Content */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
-                    <h3 className="text-2xl sm:text-3xl font-playfair font-bold mb-2 leading-tight">
+                    <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-2 leading-tight">
                       {property.name}
                     </h3>
 
-                    <p className="font-montserrat text-white text-sm font-semibold uppercase tracking-widest mb-3">
+                    <p className="font-noto text-white text-sm font-semibold uppercase tracking-widest mb-3">
                       {property.units}
                     </p>
 
-                    <p className="font-montserrat text-white/80 text-sm mb-4 flex items-center justify-between">
+                    <div className="font-noto text-white/80 text-sm mb-0 flex items-center justify-between">
                       <span>{property.location}</span>
-                      <span className="text-lg">&rarr;</span>
-                    </p>
+                      <span className="w-9 h-9 rounded-full border-2 border-white/60 flex items-center justify-center group-hover:bg-white group-hover:border-white transition-all duration-300">
+                        <svg className="w-4 h-4 transform rotate-[-45deg] text-white group-hover:text-navy transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Link>
@@ -91,7 +97,7 @@ export default function Properties() {
 
           {filteredProperties.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-gray-600 font-montserrat text-lg">
+              <p className="text-gray-600 font-noto text-lg">
                 No properties found in this category.
               </p>
             </div>
