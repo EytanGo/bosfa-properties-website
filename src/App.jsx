@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -26,24 +26,27 @@ function PageTransition({ children }) {
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
   const [transitionStage, setTransitionStage] = useState('fadeIn');
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     if (location.pathname !== displayLocation.pathname) {
       setTransitionStage('fadeOut');
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      timeoutRef.current = setTimeout(() => {
+        setDisplayLocation(location);
+        setTransitionStage('fadeIn');
+      }, 300);
     }
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, [location, displayLocation]);
 
   return (
     <div
-      className={`transition-all duration-300 ease-in-out ${
-        transitionStage === 'fadeIn' ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-1'
+      className={`transition-opacity duration-300 ease-in-out ${
+        transitionStage === 'fadeIn' ? 'opacity-100' : 'opacity-0'
       }`}
-      onTransitionEnd={() => {
-        if (transitionStage === 'fadeOut') {
-          setTransitionStage('fadeIn');
-          setDisplayLocation(location);
-        }
-      }}
     >
       <Routes location={displayLocation}>
         <Route path="/" element={<Home />} />
