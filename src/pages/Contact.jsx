@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PageHero from '../components/PageHero';
 
 export default function Contact() {
@@ -8,6 +8,9 @@ export default function Contact() {
     subject: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,17 +20,40 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Form submission logic can be added here
-    console.log('Form submitted:', formData);
-    // Reset form after submission
-    setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: '',
-    });
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '302af511-4303-4ae2-9fa8-8a5711c90600',
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: 'BOSFA Properties Website',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      setError('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -173,97 +199,168 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
-          <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Name Field */}
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
+          {/* Right Column - Contact Form / Thank You */}
+          <div className="relative min-h-[500px]">
+            {/* Thank You Message */}
+            <div
+              className={`absolute inset-0 flex flex-col items-center justify-center text-center transition-all duration-700 ease-in-out ${
+                isSubmitted
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8 pointer-events-none'
+              }`}
+            >
+              {/* Animated Email Icon */}
+              <div className="mb-8">
+                <svg
+                  className={`w-24 h-24 text-gold ${isSubmitted ? 'animate-bounce' : ''}`}
+                  style={{ animationDuration: '1.5s', animationIterationCount: '3' }}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
                 >
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
-                  placeholder="John Doe"
-                />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                  />
+                </svg>
               </div>
 
-              {/* Email Field */}
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
-                >
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
-                  placeholder="john@example.com"
-                />
-              </div>
+              <h3 className="text-3xl font-playfair font-bold text-navy mb-4">
+                Thank You!
+              </h3>
+              <p className="text-gray-600 font-noto text-lg mb-2">
+                Your message has been sent successfully.
+              </p>
+              <p className="text-gray-500 font-noto text-sm mb-8">
+                We'll get back to you as soon as possible.
+              </p>
 
-              {/* Subject Field */}
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
-                >
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
-                  placeholder="How can we help?"
-                />
-              </div>
-
-              {/* Message Field */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows="6"
-                  className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300 resize-none"
-                  placeholder="Please tell us more about your inquiry..."
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
               <button
-                type="submit"
-                className="w-full bg-gold hover:bg-gold/90 text-navy font-noto font-bold py-3 px-6 rounded transition-colors duration-300 uppercase tracking-wide"
+                onClick={() => setIsSubmitted(false)}
+                className="text-gold hover:text-navy font-noto font-semibold transition-colors duration-300 underline underline-offset-4"
               >
-                Send Message
+                Send another message
               </button>
-            </form>
+            </div>
+
+            {/* Contact Form */}
+            <div
+              className={`transition-all duration-500 ease-in-out ${
+                isSubmitted
+                  ? 'opacity-0 scale-95 pointer-events-none absolute inset-0'
+                  : 'opacity-100 scale-100'
+              }`}
+            >
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Name Field */}
+                <div>
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
+                  >
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                {/* Email Field */}
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
+                  >
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                {/* Subject Field */}
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300"
+                    placeholder="How can we help?"
+                  />
+                </div>
+
+                {/* Message Field */}
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-noto font-semibold text-navy mb-2 uppercase"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="6"
+                    className="w-full px-4 py-3 border border-gray-300 rounded bg-white font-noto text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent transition-ring duration-300 resize-none"
+                    placeholder="Please tell us more about your inquiry..."
+                  ></textarea>
+                </div>
+
+                {/* Error Message */}
+                {error && (
+                  <p className="text-red-500 font-noto text-sm">{error}</p>
+                )}
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full bg-gold hover:bg-gold/90 text-navy font-noto font-bold py-3 px-6 rounded transition-all duration-300 uppercase tracking-wide ${
+                    isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    'Send Message'
+                  )}
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
