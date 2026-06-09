@@ -11,6 +11,7 @@ export default function Footer() {
     { label: 'Investment Strategy', href: '/investment-strategy' },
     { label: 'Media & Press', href: '/media' },
     { label: 'Contact', href: '/contact' },
+    { label: 'Apartment Inquiry', href: '/rentals' },
     { label: 'Investor Portal', href: '/investor-portal' },
   ];
 
