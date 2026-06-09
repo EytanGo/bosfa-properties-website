@@ -23,6 +23,7 @@ export default function Header() {
     { label: 'INVESTMENT STRATEGY', href: '/investment-strategy' },
     { label: 'MEDIA & PRESS', href: '/media' },
     { label: 'CONTACT', href: '/contact' },
+    { label: 'APARTMENT INQUIRY', href: '/rentals' },
     { label: 'INVESTOR PORTAL', href: '/investor-portal' },
   ];
 
