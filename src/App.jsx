@@ -10,6 +10,7 @@ import InvestmentStrategy from './pages/InvestmentStrategy';
 import Media from './pages/Media';
 import MediaArticle from './pages/MediaArticle';
 import Contact from './pages/Contact';
+import RentalInquiry from './pages/RentalInquiry';
 import InvestorPortal from './pages/InvestorPortal';
 
 function ScrollToTop() {
@@ -37,6 +38,7 @@ function App() {
           <Route path="/media" element={<Media />} />
           <Route path="/media/:slug" element={<MediaArticle />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/rentals" element={<RentalInquiry />} />
           <Route path="/investor-portal" element={<InvestorPortal />} />
         </Routes>
       </main>
